@@ -1,0 +1,9 @@
+name: myfirstactions
+on: workflow_dispatch
+jobs: firstjob
+  runs-on: ubuntu-latest
+  steps:
+   - name: print greeting
+     run: echo "heelo greeting"
+   - name: print hello
+     run: echo "hello"
