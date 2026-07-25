@@ -1,4 +1,4 @@
-name: githubactionvnd
+name: githubcheck-vnd
 on: workflow_dispatch
 jobs:
  mynewjob:
