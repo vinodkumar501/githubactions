@@ -2,7 +2,7 @@ name: multitrigger
 on: [push, workflow_dispatch]
 jobs:
    test:
-     runs-on: ubuntu:latest
+     runs-on: ubuntu-latest
      steps:
         - name: checkout
           uses: actions/checkout@v7     
@@ -15,7 +15,8 @@ jobs:
         - name: test npm
           run: npm test 
    Deploy:
-     runs-on: ubuntu:latest
+     needs: test
+     runs-on: ubuntu-latest
      steps:
         - name: checkout
           uses: actions/checkout@v7     
