@@ -1,9 +1,11 @@
-name: githubcheck-vnd
+name: myfirstworkflow
 on: workflow_dispatch
 jobs:
- mynewjob:
-  runs-on: ubuntu-latest
+ firstjob:
+  runs-on: ubuntu:latest
   steps:
-    - name: checkout repo
-      uses: actions/checkout@v4
+   - name: print greet
+     run: echo "greet"
+   - name: print hello
+     run: echo "hello"
 
