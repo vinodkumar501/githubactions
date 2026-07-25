@@ -15,7 +15,7 @@ jobs:
     - name: run tests
       run: npm test
  deploy:
-  runs-on: ubuntu:latest
+  runs-on: ubuntu-latest
   steps:
     - name: download code from repo 
       uses: actions/checkout@v7
