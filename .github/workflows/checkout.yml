@@ -1,33 +1,31 @@
-name: mynewjob
-on: push 
+name: multitrigger
+on: [push, workflow_dispatch]
 jobs:
- test:
-  runs-on: ubuntu-latest
-  steps:
-    - name: download code from repo 
-      uses: actions/checkout@v7
-    - name: install nodejs
-      uses: actions/setup-node@v7
-      with:
-        node-version: 24
-    - name: install dependencies
-      run: npm ci   //npm install  
-    - name: run tests
-      run: npm test
- deploy:
-  needs: test
-  runs-on: ubuntu-latest
-  steps:
-    - name: download code from repo 
-      uses: actions/checkout@v7
-    - name: install nodejs
-      uses: actions/setup-node@v7
-      with:
-        node-version: 24
-    - name: install dependencies
-      run: npm ci   //npm install 
-    - name: npm build 
-      run: npm run build 
-    - name: deploy 
-      run: echo "deployed"   
-  
+   test:
+     runs-on: ubuntu:latest
+     steps:
+        - name: checkout
+          uses: actions/checkout@v7     
+        - name: Install nodejs
+          uses: actions/setup-node@v7
+          with:
+            node-version: 24
+        - name: install dependencies
+          run: npm ci 
+        - name: test npm
+          run: npm test 
+   Deploy:
+     runs-on: ubuntu:latest
+     steps:
+        - name: checkout
+          uses: actions/checkout@v7     
+        - name: Install nodejs
+          uses: actions/setup-node@v7
+          with:
+            node-version: 24
+        - name: install dependencies
+          run: npm ci 
+        - name: build npm
+          run: npm run build 
+        - name: deploy 
+          run: echo "deploy"
