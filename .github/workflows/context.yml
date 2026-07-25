@@ -5,5 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output GitHub context
-        run: echo "${{ toJSON(github) }}" 
-        //https://docs.github.com/en/actions/reference/workflows-and-actions/contexts
+        run: echo "${{ toJSON(github) }}" //https://docs.github.com/en/actions/reference/workflows-and-actions/contexts
