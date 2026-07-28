@@ -36,6 +36,6 @@ jobs:
         with:
           name: upload-vnd
       - name: output
-        run: ls 
+        run: ls dist 
       - name: Deploy code
         run: echo "Deploying..."
