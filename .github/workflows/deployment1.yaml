@@ -32,7 +32,7 @@ jobs:
             dist
             package.json
       - name: download artifact
-        uses: actions-download-artifact@v8
+        uses: actions/download-artifact@v8
         with:
           name: upload-vnd
       - name: output
