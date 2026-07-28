@@ -24,5 +24,12 @@ jobs:
         run: npm run test
       - name: Build code
         run: npm run build
+      - name: upload artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: upload-vnd
+          path: |
+            dist
+            package.json
       - name: Deploy code
         run: echo "Deploying..."
