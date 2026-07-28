@@ -31,5 +31,11 @@ jobs:
           path: |
             dist
             package.json
+      - name: download artifact
+        uses: actions-download-artifact@v8
+        with:
+          name: upload-vnd
+      - name: output
+        run: ls 
       - name: Deploy code
         run: echo "Deploying..."
